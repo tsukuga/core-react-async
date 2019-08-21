@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import Hello from './Hello';
 import './style.css';
 
-export default class Hello extends Component {
+export default class App extends Component {
 
   constructor() {
     super();
@@ -13,11 +13,23 @@ export default class Hello extends Component {
   }
 
   get(e){
-    setState({result:e})
+    this.setState({result:e})
+  }
+
+  render(){
+
+    return(
+      
+       <div>
+        <Hello getResult={this.get.bind(this)}/>
+       
+        <button type="button" onClick={()=>(console.log(this.state.result))}>渡し確認</button>
+      </div>
+    )
   }
 
 
 }
 
-render(<Hello getresult={this.get} />, document.getElementById('root'));
+render(<App/>, document.getElementById('root'));
 

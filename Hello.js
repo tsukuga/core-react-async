@@ -559,7 +559,8 @@ export default class Hello extends Component {
       <div>
 
         <button type="button" onClick={this.sendState.bind(this)}>set反映</button>
-        <button type="button" onClick={()=>(console.log(this.state.result))}>時間差</button>
+        <button type="button" onClick={this.sendState.bind(this)}>時間反映</button>
+    
       </div>
     );
   }
